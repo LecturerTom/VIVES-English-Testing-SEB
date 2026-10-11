@@ -1,202 +1,83 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <meta name="theme-color" content="#ce2028">
-  <meta name="description" content="Prepare your device for supervised English assessments at VIVES using Safe Exam Browser and Toledo.">
-  <title>English Assessments · Safe Exam Browser | VIVES</title>
+  <meta name="theme-color" content="#d51b2b">
+  <meta name="description" content="Prepare and check your device for supervised English assessments at VIVES using Safe Exam Browser and Toledo.">
+  <title>English testing · Safe Exam Browser | VIVES</title>
   <style>
-    :root {
-      color-scheme: light;
-      --red: #d61e2b;
-      --red-deep: #b51221;
-      --ink: #1d1d1d;
-      --secondary: #555350;
-      --soft: #efece6;
-      --canvas: #f6f5f2;
-      --rule: #e5e2dd;
-      --white: #ffffff;
-    }
-    *, *::before, *::after {box-sizing: border-box;}
-    html {scroll-behavior: smooth;}
-    body {margin: 0; background: var(--canvas); color: var(--ink); font-family: "Arial", "Helvetica Neue", Helvetica, sans-serif; font-size: 16px; line-height: 1.6;}
-    a {color: var(--red-deep); text-underline-offset: 3px;}
-    a:hover {text-decoration-thickness: 2px;}
-    a:focus-visible, button:focus-visible, input:focus-visible {outline: 3px solid var(--red); outline-offset: 4px;}
-    .topline {height: 7px; background: var(--red);}
-    .site-nav {background: var(--white); border-bottom: 1px solid var(--rule);}
-    .nav-inner {max-width: 1130px; margin: auto; padding: 21px 28px; display: flex; align-items: center; justify-content: space-between; gap: 20px;}
-    .brand {text-decoration: none; color: var(--ink); display: flex; align-items: baseline; gap: 12px; white-space: nowrap;}
-    .brand-label {font-size: 13px; font-weight: 700; letter-spacing: .02em;}
-    .brand-name {font-size: 23px; font-weight: 900; letter-spacing: -.075em;}
-    .nav-tag {font-size: .82rem; font-weight: 700; letter-spacing: .075em; text-transform: uppercase; color: #5c5a56;}
-    main {max-width: 1130px; margin: 0 auto; padding: 34px 28px 68px;}
-    .hero {position: relative; overflow: hidden; display: grid; grid-template-columns: 1.55fr .8fr; gap: 30px; min-height: 315px; background: var(--white); border: 1px solid var(--rule); border-radius: 8px;}
-    .hero-copy {z-index: 1; padding: 52px 46px 47px;}
-    .kicker {color: var(--red-deep); font-size: .77rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 14px;}
-    h1 {font-size: clamp(2.1rem, 4.6vw, 3.8rem); letter-spacing: -.055em; line-height: 1.08; margin: 0 0 20px; font-weight: 850; max-width: 660px;}
-    .intro {font-size: 1.085rem; line-height: 1.65; color: var(--secondary); max-width: 630px; margin: 0;}
-    .hero-art {position: relative; overflow: hidden; background: var(--red);}
-    .hero-art::before {content: ""; width: 400px; height: 400px; position: absolute; top: -134px; left: -120px; border: 75px solid rgba(255,255,255,.96); border-radius: 50%;}
-    .hero-art::after {content: ""; width: 270px; height: 270px; position: absolute; bottom: -175px; right: -80px; border: 65px solid #252525; border-radius: 50%;}
-    .art-caption {position: absolute; z-index: 1; right: 27px; top: 29px; text-align: right; color: #fff; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .13em; line-height: 1.6;}
-    .section-title {display: flex; flex-wrap: wrap; align-items: baseline; gap: 12px; margin: 43px 0 14px;}
-    .section-title h2 {font-size: clamp(1.35rem, 2vw, 1.65rem); letter-spacing: -.035em; line-height: 1.2; margin: 0;}
-    .section-title p {margin: 0; color: var(--secondary); font-size: .92rem;}
-    .cards {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px;}
-    .card {background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 31px; display: flex; flex-direction: column; align-items: flex-start;}
-    .card-top {display: flex; align-items: center; gap: 13px; width: 100%; margin-bottom: 16px;}
-    .platform-icon {width: 49px; height: 49px; border-radius: 7px; display: grid; place-items: center; color: var(--red); background: #fff1f1;}
-    .platform-icon svg {width: 26px; height: 26px;}
-    h3 {font-size: 1.25rem; letter-spacing: -.025em; line-height: 1.25; margin: 0;}
-    .card p {color: var(--secondary); font-size: .95rem; margin: 0 0 15px;}
-    .platform-details {font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--secondary); font-weight: 700;}
-    .card-links {display: flex; flex-wrap: wrap; flex-direction: column; align-items: flex-start; gap: 12px; margin-top: auto; padding-top: 10px; width: 100%;}
-    .primary-button {display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 4px; background: var(--red); border: 1px solid var(--red); color: var(--white); font-size: .96rem; font-weight: 800; padding: 13px 17px; text-decoration: none; min-height: 47px; text-align: center;}
-    .primary-button:hover {background: var(--red-deep); border-color: var(--red-deep); color: #fff; text-decoration: none;}
-    .primary-button[aria-disabled="true"] {pointer-events: none; background: #9b9792; border-color: #9b9792;}
-    .text-link {font-weight: 700; font-size: .91rem;}
-    .hint {font-size: .85rem !important; margin-top: 12px !important; margin-bottom: 0 !important;}
-    .howto {background: var(--white); border: 1px solid var(--rule); border-radius: 8px; padding: 31px 36px;}
-    .howto-grid {display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 34px;}
-    .howto h3 {font-size: 1.05rem; margin-bottom: 14px;}
-    ol {padding-left: 20px; margin: 0;}
-    li {padding-left: 4px; margin: 8px 0;}
-    .support {display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px;}
-    .tip {padding: 26px 28px; background: var(--soft); border-radius: 8px;}
-    .tip h3 {font-size: 1.05rem; margin-bottom: 8px;}
-    .tip p {font-size: .94rem; margin: 0; color: #46433f;}
-    .notice {margin-top: 20px; padding: 20px 24px; background: var(--white); border: 1px solid var(--rule); border-left: 5px solid var(--red); border-radius: 4px; font-size: .93rem;}
-    .notice p {margin: 0;}
-    .footer {margin-top: 42px; padding: 26px 0 0; border-top: 1px solid #d7d3cd; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; color: #66615b; font-size: .83rem;}
-    .footer p {margin: 0;}
-    .footer a {color: #5b5751;}
-    .visually-hidden {position: absolute; height: 1px; width: 1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap;}
-    @media(max-width: 750px) {
-      main {padding: 20px 16px 46px;}
-      .nav-inner {padding: 18px 17px;}
-      .nav-tag {display: none;}
-      .hero {grid-template-columns: 1fr;}
-      .hero-copy {padding: 34px 26px 30px;}
-      .hero-art {height: 75px;}
-      .hero-art::before {top: -264px; left: -50px;}
-      .hero-art::after {bottom: -224px; right: -20px;}
-      .art-caption {top: 19px; right: 23px;}
-      .cards, .howto-grid, .support {grid-template-columns: 1fr;}
-      .card {padding: 25px;}
-      .howto {padding: 26px;}
-      .howto-grid {gap: 24px;}
-    }
-    @media (prefers-reduced-motion: reduce) {html {scroll-behavior: auto;}}
+    :root{--red:#d51b2b;--red2:#ad1120;--ink:#1b1d21;--muted:#525760;--bg:#f6f5f3;--paper:#fff;--rule:#e5e4e2;--warm:#fff7f2}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.58 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+    a{color:var(--red2);text-underline-offset:3px}a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+    .topline{height:6px;background:var(--red)}.shell{max-width:1110px;margin:auto;padding:0 28px}
+    nav{background:#fff;border-bottom:1px solid var(--rule)}.nav{min-height:91px;display:flex;justify-content:space-between;align-items:center;gap:22px}
+    .logo{display:block;width:164px;max-height:70px;object-fit:contain}.nav-side{text-align:right}.nav-side strong{font-size:.88rem;letter-spacing:.035em}.nav-side span{display:block;color:#707178;font-size:.81rem}
+    .hero{padding:62px 0 54px;display:grid;grid-template-columns:1.3fr .68fr;gap:40px;align-items:center}.kicker{font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;color:var(--red2);margin:0 0 18px}
+    h1{font-size:clamp(2.55rem,5.4vw,4.8rem);letter-spacing:-.065em;line-height:1.04;margin:0 0 19px;font-weight:840}h2{font-size:1.8rem;letter-spacing:-.04em;line-height:1.16;margin:0 0 12px}h3{font-size:1.12rem;letter-spacing:-.025em;margin:0 0 8px}
+    p{margin:0}.hero p.lead{max-width:645px;color:var(--muted);font-size:1.09rem;line-height:1.72}
+    .hero-mark{height:278px;position:relative;background:var(--red);border-radius:12px;overflow:hidden;isolation:isolate}.hero-mark:before{content:"";position:absolute;border:55px solid white;border-radius:50%;width:286px;height:286px;left:-88px;top:-100px}.hero-mark:after{content:"";position:absolute;border:55px solid #1d1d1d;border-radius:50%;width:226px;height:226px;right:-64px;bottom:-110px}.hero-mark b{color:#fff;position:absolute;top:23px;right:26px;text-align:right;text-transform:uppercase;letter-spacing:.15em;font-size:.77rem;line-height:1.65}
+    .introline{display:flex;justify-content:space-between;gap:16px;align-items:end;margin:14px 0 16px}.introline p{color:var(--muted);font-size:.92rem}
+    .section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+    .panel{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:32px;display:flex;flex-direction:column;min-height:365px;position:relative}
+    .panel.practice{border-top:5px solid var(--red)}.panel.exam{border-top:5px solid var(--ink)}
+    .pill{display:inline-block;align-self:flex-start;border-radius:4px;font-size:.72rem;font-weight:800;letter-spacing:.10em;text-transform:uppercase;padding:5px 9px;margin-bottom:19px;background:#fce8ea;color:#9d1322}.exam .pill{background:#ededed;color:#272727}
+    .panel p{color:var(--muted);margin:0 0 16px;max-width:440px;font-size:.97rem}.panel .small{font-size:.83rem;line-height:1.55;margin-top:13px}
+    .actions{margin-top:auto;padding-top:14px;display:flex;flex-wrap:wrap;gap:9px}
+    .btn{border:1px solid var(--red);border-radius:5px;background:var(--red);color:#fff;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;font-weight:750;min-height:47px;padding:12px 17px;font-size:.92rem}
+    .btn:hover{background:var(--red2);border-color:var(--red2);color:#fff}.btn.dark{background:var(--ink);border-color:var(--ink)}.btn.dark:hover{background:#444}.btn.secondary{background:#fff;color:var(--red2)}.btn.secondary:hover{background:#fff4f4}.btn.dark.secondary{color:var(--ink);background:white}
+    .micro{color:#60636a;font-size:.78rem;margin-top:10px}
+    .note{margin-top:22px;border-left:4px solid var(--red);border-radius:4px;background:#fff;padding:19px 23px;color:#41444a}
+    .steps{padding:57px 0 30px}.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{border:1px solid var(--rule);border-radius:8px;background:#fff;padding:25px 25px 26px}.num{font-weight:900;color:var(--red);font-size:.79rem;letter-spacing:.1em;margin-bottom:20px}.step p{font-size:.91rem;color:var(--muted)}
+    .faq{padding:30px 0 65px}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.faq-block{background:#eeece8;border-radius:8px;padding:25px 28px}.faq-block p{color:#46474b;font-size:.93rem}
+    .foot{border-top:1px solid #dad9d7;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:24px 0 35px;font-size:.8rem;color:#686a6e}.foot a{color:inherit}
+    @media(max-width:850px){.hero{grid-template-columns:1fr;padding:39px 0}.hero-mark{display:none}.steps-grid{grid-template-columns:1fr}.introline{align-items:start;flex-direction:column}}
+    @media(max-width:650px){.shell{padding:0 17px}.nav{min-height:75px}.logo{width:135px}.nav-side span{display:none}.nav-side strong{font-size:.73rem}.hero{padding:37px 0 30px}h1{font-size:2.65rem}.section-grid,.faq-grid{grid-template-columns:1fr}.panel{padding:24px;min-height:unset}.btn{width:100%}.actions{flex-direction:column}.steps{padding-top:35px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
   <div class="topline"></div>
-  <nav class="site-nav" aria-label="Site identity">
-    <div class="nav-inner">
-      <a class="brand" href="./" aria-label="VIVES English assessments home">
-        <span class="brand-label">Hogeschool</span><span class="brand-name">VIVES</span>
-      </a>
-      <span class="nav-tag">English · Assessment support</span>
-    </div>
-  </nav>
-  <main>
-    <header class="hero">
-      <div class="hero-copy">
-        <p class="kicker">English assessments · VIVES</p>
-        <h1>Ready for your English test?</h1>
-        <p class="intro">Some English assessments at VIVES take place in Toledo using <strong>Safe Exam Browser (SEB)</strong>. Use this page to prepare your device and open the secure test environment.</p>
-      </div>
-      <div class="hero-art" aria-hidden="true"><span class="art-caption">Prepare<br>Connect<br>Begin</span></div>
-    </header>
-
-    <div class="section-title" id="get-started"><h2>Choose your device</h2><p>Install SEB first. Then open the configuration for Toledo.</p></div>
-    <div class="cards">
-      <section class="card" aria-labelledby="laptop-title">
-        <div class="card-top">
-          <span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3.5" width="16" height="12" rx="1.5"/><path d="M2 19.5h20l-2-4H4l-2 4z"/></svg></span>
-          <div><div class="platform-details">Laptop / desktop</div><h3 id="laptop-title">Windows &amp; macOS</h3></div>
-        </div>
-        <p>Install Safe Exam Browser, download the configuration file, and open it. SEB will take you to Toledo.</p>
-        <div class="card-links">
-          <a class="primary-button" href="VIVES_English_Testing.seb" download>Download SEB configuration <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="https://safeexambrowser.org/download_en.html" target="_blank" rel="noopener noreferrer">Get Safe Exam Browser ↗</a>
-        </div>
+  <nav><div class="shell nav">
+    <a href="./" aria-label="VIVES English testing home"><img class="logo" src="assets/vives-logo.png" alt="Hogeschool VIVES" width="164" height="93"></a>
+    <div class="nav-side"><strong>ENGLISH TESTING</strong><span>Safe Exam Browser · Toledo</span></div>
+  </div></nav>
+  <main class="shell">
+    <header class="hero"><div><p class="kicker">VIVES · Assessment support</p><h1>Ready for your English assessment?</h1>
+    <p class="lead">Prepare your own device with <strong>Safe Exam Browser (SEB)</strong> for supervised English assessments in Toledo. First check your setup at home; then use the official assessment environment in class.</p></div>
+    <div class="hero-mark" aria-hidden="true"><b>Prepare<br>Practise<br>Begin</b></div></header>
+    <div class="introline"><h2>Choose your environment</h2><p>Install SEB before selecting an option below.</p></div>
+    <div class="section-grid" id="environments">
+      <section class="panel practice" aria-labelledby="practice-title">
+        <span class="pill">01 · Before test day</span><h3 id="practice-title">Practice &amp; device check</h3>
+        <p>Use this configuration at home to check that SEB, the Toledo login, questions, video, headphones and submission work correctly.</p>
+        <p><strong>Practice exit password: <code>practice2026</code></strong>. You can use this to leave the practice SEB session after submitting your practice test.</p>
+        <div class="actions">
+          <a class="btn" href="VIVES_English_Testing_Practice.seb" download>Windows / macOS · download</a>
+          <a class="btn secondary" href="sebs://lecturertom.github.io/VIVES-English-Testing-SEB/VIVES_English_Testing_Practice.seb">iPad · open in SEB</a>
+        </div><p class="small">The practice configuration opens Toledo; your lecturer must provide a separate practice test in Toledo. The practice password is <em>not</em> a Toledo access code.</p>
       </section>
-      <section class="card" aria-labelledby="ipad-title">
-        <div class="card-top">
-          <span class="platform-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5.5" y="2.5" width="13" height="19" rx="2"/><path d="M11 18.5h2"/></svg></span>
-          <div><div class="platform-details">Tablet</div><h3 id="ipad-title">iPadOS</h3></div>
-        </div>
-        <p>Install the iPad app, open <strong>this webpage in Safari</strong>, then select the button below to launch the Toledo configuration directly in SEB.</p>
-        <div class="card-links">
-          <a id="ipad-seb-link" class="primary-button" href="#ipad-help">Open in Safe Exam Browser <span aria-hidden="true">↗</span></a>
-          <a class="text-link" href="https://apps.apple.com/be/app/safeexambrowser/id1155002964" target="_blank" rel="noopener noreferrer">Get the iPad app ↗</a>
-        </div>
-        <p id="ipad-help" class="hint">Do not try to open the file from a Google Drive preview or from inside SEB.</p>
+      <section class="panel exam" aria-labelledby="exam-title">
+        <span class="pill">02 · During your supervised assessment</span><h3 id="exam-title">Official assessment</h3>
+        <p>Open this configuration only when your lecturer tells you to. Your device will remain in the secure assessment environment until the lecturer authorises you to leave.</p>
+        <p>There is <strong>no extra password to launch SEB</strong>. Your lecturer gives you the Toledo assessment access code in class.</p>
+        <div class="actions">
+          <a class="btn dark" href="VIVES_English_Testing_Exam.seb" download>Windows / macOS · download</a>
+          <a class="btn dark secondary" href="sebs://lecturertom.github.io/VIVES-English-Testing-SEB/VIVES_English_Testing_Exam.seb">iPad · open in SEB</a>
+        </div><p class="small">Do not use the official configuration for practice. Its exit password is held by the invigilator.</p>
       </section>
     </div>
-
-    <div class="section-title"><h2>Before your assessment</h2><p>Follow the specific instructions provided in your Toledo course.</p></div>
-    <section class="howto" aria-label="Before and during the assessment">
-      <div class="howto-grid">
-        <div>
-          <h3>01 / Prepare in advance</h3>
-          <ol>
-            <li>Install SEB on your own device.</li>
-            <li>Open the configuration using the instructions above.</li>
-            <li>Complete any practice test provided by your lecturer.</li>
-            <li>Check that Toledo works and, if your test includes listening, that your headphones and audio work.</li>
-          </ol>
-        </div>
-        <div>
-          <h3>02 / On test day</h3>
-          <ol>
-            <li>Bring a charged device and your headphones, if required.</li>
-            <li>Close other applications and start SEB using this configuration.</li>
-            <li>Sign in to Toledo and find the assessment for your English course.</li>
-            <li>Enter the Toledo access code provided by your lecturer.</li>
-            <li>At the end, select <strong>Verzenden</strong> and check the submission confirmation.</li>
-          </ol>
-        </div>
-      </div>
-    </section>
-
-    <section class="support" aria-label="Frequently asked questions">
-      <div class="tip">
-        <h3>Do I need an SEB password?</h3>
-        <p>No separate password is required to open this SEB configuration. Your lecturer may give you an <strong>access code for the Toledo assessment</strong> in class.</p>
-      </div>
-      <div class="tip">
-        <h3>Something isn't working?</h3>
-        <p>Test your setup <strong>before</strong> the assessment. If you have problems with your device, login or audio, contact your lecturer. During the test, raise your hand rather than trying to leave SEB.</p>
-      </div>
-    </section>
-
-    <div class="notice">
-      <p><strong>Important:</strong> This website only provides the software setup, not the assessment or its access code. Follow your lecturer's instructions and stay in the authorised exam environment until your submission has been confirmed.</p>
-    </div>
-    <footer class="footer">
-      <p>VIVES English assessment support · Safe Exam Browser configuration for Toledo</p>
-      <p><a href="https://www.vives.be/" target="_blank" rel="noopener noreferrer">Hogeschool VIVES ↗</a> · <a href="https://safeexambrowser.org/" target="_blank" rel="noopener noreferrer">Safe Exam Browser ↗</a></p>
-    </footer>
+    <div class="note"><strong>Install SEB first:</strong> <a href="https://safeexambrowser.org/download_en.html" target="_blank" rel="noopener noreferrer">Windows &amp; macOS download</a> · <a href="https://apps.apple.com/be/app/safeexambrowser/id1155002964" target="_blank" rel="noopener noreferrer">iPadOS app</a>. On an iPad, open <strong>this page in Safari</strong> and then tap “iPad · open in SEB”.</div>
+    <section class="steps" aria-labelledby="steps-title"><h2 id="steps-title">How it works</h2><div class="steps-grid">
+      <article class="step"><div class="num">STEP 01</div><h3>Install &amp; practise</h3><p>Install SEB, open the practice configuration, sign in to Toledo and complete the practice assessment assigned by your lecturer.</p></article>
+      <article class="step"><div class="num">STEP 02</div><h3>Prepare for test day</h3><p>Bring a charged device, charger and headphones if needed. Connect and check audio before the assessment; close other applications.</p></article>
+      <article class="step"><div class="num">STEP 03</div><h3>Take &amp; submit</h3><p>Open the official configuration in class, enter the Toledo access code, complete the test and select <strong>Verzenden</strong>. Wait for submission confirmation.</p></article>
+    </div></section>
+    <section class="faq" aria-label="Frequently asked questions"><div class="faq-grid">
+      <div class="faq-block"><h3>Can't open Toledo or play the video?</h3><p>Report problems before the assessment. During a supervised test, raise your hand and wait for the lecturer; do not try to switch apps or restart the session yourself.</p></div>
+      <div class="faq-block"><h3>What if I use an iPad or an unsupported device?</h3><p>Test the full workflow in advance. iPad users should open this webpage in Safari, not inside SEB. If your device is not compatible, contact your lecturer early for an alternative.</p></div>
+    </div></section>
+    <footer class="foot"><span>Hogeschool VIVES · English assessments · Unofficial course support page</span><span><a href="https://www.vives.be/nl/huisstijl/logo" target="_blank" rel="noopener noreferrer">VIVES identity</a> · <a href="https://safeexambrowser.org/" target="_blank" rel="noopener noreferrer">Safe Exam Browser</a></span></footer>
   </main>
-  <script>
-    (function () {
-      'use strict';
-      var button = document.getElementById('ipad-seb-link');
-      var help = document.getElementById('ipad-help');
-      if (window.location.protocol !== 'https:') {
-        button.setAttribute('aria-disabled', 'true');
-        button.addEventListener('click', function (event) { event.preventDefault(); });
-        help.textContent = 'The iPad button will work when this website is published over HTTPS (GitHub Pages).';
-        return;
-      }
-      var configURL = new URL('VIVES_English_Testing.seb', document.baseURI);
-      button.href = configURL.href.replace(/^https:/, 'sebs:');
-    })();
-  </script>
 </body>
 </html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>English 2 | Safe Exam Browser</title>
+  <style>
+    :root {color-scheme: light;--ink:#182b3a;--muted:#566978;--blue:#135e7a;--light:#f0f7f9;--rule:#dbe6e9}
+    * {box-sizing:border-box}
+    body {margin:0;background:#f7f9fa;color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif;line-height:1.6}
+    main {max-width:820px;margin:0 auto;padding:38px 22px 64px}
+    header {padding:34px 35px 28px;background:#fff;border:1px solid var(--rule);border-radius:18px}
+    .eyebrow {text-transform:uppercase;letter-spacing:.16em;font-size:.74rem;font-weight:750;color:var(--blue)}
+    h1 {font-size:clamp(1.65rem,4.5vw,2.5rem);letter-spacing:-.035em;line-height:1.18;margin:12px 0}
+    h2 {font-size:1.2rem;margin:0 0 10px}
+    p {margin:7px 0 13px}
+    .muted {color:var(--muted)}
+    .tag {display:inline-block;background:var(--light);border-radius:6px;padding:4px 9px;font-weight:650;color:var(--blue);font-size:.8rem}
+    .grid {display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:20px}
+    .panel {padding:25px;background:white;border:1px solid var(--rule);border-radius:16px}
+    a.action {display:inline-block;border-radius:8px;padding:11px 16px;color:#fff;background:var(--blue);text-decoration:none;font-weight:700;margin-top:8px}
+    a.action:hover {background:#104e65}
+    a.secondary {background:#e6f0f3;color:var(--blue)}
+    a.secondary:hover {background:#d8e9ee}
+    .steps {background:white;border:1px solid var(--rule);border-radius:16px;margin-top:20px;padding:24px 30px}
+    ol {padding-left:22px;margin-bottom:6px}
+    li {padding-left:3px;margin:8px 0}
+    .notice {background:#f8f3e8;border:1px solid #e4d4b3;border-radius:11px;padding:15px 17px;margin-top:20px;font-size:.95rem}
+    footer {font-size:.85rem;color:var(--muted);margin:28px 3px 0}
+    code {word-break:break-word}
+    @media(max-width:620px){main{padding:15px 12px 45px}header,.panel,.steps{padding:23px 18px}.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">English 2 · Legal Practice</div>
+    <h1>Safe Exam Browser</h1>
+    <p class="muted">Prepare your device before the in-class intermediate test. The assessment itself takes place in Toledo (Blackboard Ultra).</p>
+    <span class="tag">Install and test before your assessment</span>
+  </header>
+  <div class="grid">
+    <section class="panel">
+      <h2>Windows or macOS</h2>
+      <p>Install Safe Exam Browser using the official download page. Then download the exam configuration and open the <code>.seb</code> file.</p>
+      <p><a href="https://safeexambrowser.org/download_en.html" target="_blank" rel="noopener noreferrer">Install Safe Exam Browser</a></p>
+      <a class="action" href="English_2_REC_Intermediate_Test_corrected.seb" download>Download configuration</a>
+    </section>
+    <section class="panel">
+      <h2>iPad (iPadOS)</h2>
+      <p>Install SafeExamBrowser from the App Store. Open this page in Safari on your iPad, then tap the button below to launch SEB.</p>
+      <p><a href="https://apps.apple.com/be/app/safeexambrowser/id1155002964" target="_blank" rel="noopener noreferrer">Install the iPad app</a></p>
+      <a id="open-in-seb" class="action" href="#ipad-help">Open in Safe Exam Browser</a>
+      <p id="ipad-help" class="muted" style="font-size:.83rem;margin-top:10px">Open the published HTTPS page in Safari, not inside SEB or a Google Drive preview.</p>
+    </section>
+  </div>
+  <section class="steps">
+    <h2>What to do on test day</h2>
+    <ol>
+      <li>Bring a charged device, your charger and headphones. Connect and test your headphones before the test.</li>
+      <li>Open the SEB configuration using the instructions for your device.</li>
+      <li>Sign in to Toledo within Safe Exam Browser.</li>
+      <li>Wait for your lecturer to give you the Blackboard test access code in the classroom.</li>
+      <li>At the end of the test, click <strong>Verzenden</strong> and confirm your submission before leaving.</li>
+    </ol>
+  </section>
+  <div class="notice"><strong>Important:</strong> This page provides only the SEB configuration, not the test or its access code. Do not try to exit SEB or open other apps during the assessment. For technical problems, raise your hand and wait for the lecturer.</div>
+  <footer>For educational use. Safe Exam Browser is third-party software. You must complete the course's practice test before the assessed session.</footer>
+</main>
+<script>
+(function () {
+  'use strict';
+  var anchor = document.getElementById('open-in-seb');
+  var help = document.getElementById('ipad-help');
+  if (window.location.protocol !== 'https:') {
+    anchor.classList.add('secondary');
+    anchor.addEventListener('click', function (event) {event.preventDefault();});
+    help.textContent = 'The iPad button becomes active after this site is published over HTTPS on GitHub Pages.';
+    return;
+  }
+  var configUrl = new URL('English_2_REC_Intermediate_Test_corrected.seb', document.baseURI);
+  anchor.href = configUrl.href.replace(/^https:/, 'sebs:');
+})();
+</script>
+</body>
+</html>

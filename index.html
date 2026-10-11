@@ -11,12 +11,12 @@
     *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.58 system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
     a{color:var(--red2);text-underline-offset:3px}a:focus-visible{outline:3px solid var(--red);outline-offset:3px}
     .topline{height:6px;background:var(--red)}.shell{max-width:1110px;margin:auto;padding:0 28px}
-    nav{background:#fff;border-bottom:1px solid var(--rule)}.nav{min-height:91px;display:flex;justify-content:space-between;align-items:center;gap:22px}
-    .logo{display:block;width:164px;max-height:70px;object-fit:contain}.nav-side{text-align:right}.nav-side strong{font-size:.88rem;letter-spacing:.035em}.nav-side span{display:block;color:#707178;font-size:.81rem}
-    .hero{padding:62px 0 54px;display:grid;grid-template-columns:1.3fr .68fr;gap:40px;align-items:center}.kicker{font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;color:var(--red2);margin:0 0 18px}
+    nav{background:#fff;border-bottom:1px solid var(--rule)}.nav{min-height:98px;display:flex;justify-content:space-between;align-items:center;gap:22px}
+    .logo{display:block;width:318px;max-width:100%;max-height:74px;object-fit:contain}.nav-side{text-align:right}.nav-side strong{font-size:.88rem;letter-spacing:.035em}.nav-side span{display:block;color:#707178;font-size:.81rem}
+    .hero{padding:62px 0 54px;display:grid;grid-template-columns:1.3fr .72fr;gap:40px;align-items:center}.kicker{font-size:.78rem;letter-spacing:.17em;text-transform:uppercase;font-weight:800;color:var(--red2);margin:0 0 18px}
     h1{font-size:clamp(2.55rem,5.4vw,4.8rem);letter-spacing:-.065em;line-height:1.04;margin:0 0 19px;font-weight:840}h2{font-size:1.8rem;letter-spacing:-.04em;line-height:1.16;margin:0 0 12px}h3{font-size:1.12rem;letter-spacing:-.025em;margin:0 0 8px}
     p{margin:0}.hero p.lead{max-width:645px;color:var(--muted);font-size:1.09rem;line-height:1.72}
-    .hero-mark{height:278px;position:relative;background:var(--red);border-radius:12px;overflow:hidden;isolation:isolate}.hero-mark:before{content:"";position:absolute;border:55px solid white;border-radius:50%;width:286px;height:286px;left:-88px;top:-100px}.hero-mark:after{content:"";position:absolute;border:55px solid #1d1d1d;border-radius:50%;width:226px;height:226px;right:-64px;bottom:-110px}.hero-mark b{color:#fff;position:absolute;top:23px;right:26px;text-align:right;text-transform:uppercase;letter-spacing:.15em;font-size:.77rem;line-height:1.65}
+    .hero-card{background:#fff;border:1px solid var(--rule);border-radius:12px;overflow:hidden}.hero-card-head{background:var(--red);color:#fff;padding:14px 18px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem}.hero-card-body{padding:18px 22px}.hero-card-body ul{margin:0;padding-left:18px;color:var(--muted)}.hero-card-body li{margin:0 0 10px}.hero-card-body li:last-child{margin-bottom:0}
     .introline{display:flex;justify-content:space-between;gap:16px;align-items:end;margin:14px 0 16px}.introline p{color:var(--muted);font-size:.92rem}
     .section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
     .panel{background:#fff;border:1px solid var(--rule);border-radius:10px;padding:32px;display:flex;flex-direction:column;min-height:365px;position:relative}
@@ -32,20 +32,20 @@
     .faq{padding:30px 0 65px}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.faq-block{background:#eeece8;border-radius:8px;padding:25px 28px}.faq-block p{color:#46474b;font-size:.93rem}
     .foot{border-top:1px solid #dad9d7;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:24px 0 35px;font-size:.8rem;color:#686a6e}.foot a{color:inherit}
     @media(max-width:850px){.hero{grid-template-columns:1fr;padding:39px 0}.hero-mark{display:none}.steps-grid{grid-template-columns:1fr}.introline{align-items:start;flex-direction:column}}
-    @media(max-width:650px){.shell{padding:0 17px}.nav{min-height:75px}.logo{width:135px}.nav-side span{display:none}.nav-side strong{font-size:.73rem}.hero{padding:37px 0 30px}h1{font-size:2.65rem}.section-grid,.faq-grid{grid-template-columns:1fr}.panel{padding:24px;min-height:unset}.btn{width:100%}.actions{flex-direction:column}.steps{padding-top:35px}}
+    @media(max-width:650px){.shell{padding:0 17px}.nav{min-height:86px}.logo{width:220px}.nav-side span{display:none}.nav-side strong{font-size:.73rem}.hero{padding:37px 0 30px}h1{font-size:2.65rem}.section-grid,.faq-grid{grid-template-columns:1fr}.panel{padding:24px;min-height:unset}.btn{width:100%}.actions{flex-direction:column}.steps{padding-top:35px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
 <body>
   <div class="topline"></div>
   <nav><div class="shell nav">
-    <a href="./" aria-label="VIVES English testing home"><img class="logo" src="assets/vives-logo.png" alt="Hogeschool VIVES" width="164" height="93"></a>
+    <a href="./" aria-label="VIVES English testing home"><img class="logo" src="assets/vives-logo-uas.png" alt="VIVES University of Applied Sciences" width="318" height="74"></a>
     <div class="nav-side"><strong>ENGLISH TESTING</strong><span>Safe Exam Browser · Toledo</span></div>
   </div></nav>
   <main class="shell">
     <header class="hero"><div><p class="kicker">VIVES · Assessment support</p><h1>Ready for your English assessment?</h1>
     <p class="lead">Prepare your own device with <strong>Safe Exam Browser (SEB)</strong> for supervised English assessments in Toledo. First check your setup at home; then use the official assessment environment in class.</p></div>
-    <div class="hero-mark" aria-hidden="true"><b>Prepare<br>Practise<br>Begin</b></div></header>
+    <aside class="hero-card" aria-label="Assessment preparation overview"><div class="hero-card-head">Assessment checklist</div><div class="hero-card-body"><ul><li>Install Safe Exam Browser before test day.</li><li>Use the practice environment first to test Toledo, audio and submission.</li><li>On the day itself, open the official exam environment and enter the Toledo access code provided in class.</li></ul></div></aside></header>
     <div class="introline"><h2>Choose your environment</h2><p>Install SEB before selecting an option below.</p></div>
     <div class="section-grid" id="environments">
       <section class="panel practice" aria-labelledby="practice-title">

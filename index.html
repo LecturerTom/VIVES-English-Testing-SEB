@@ -27,12 +27,24 @@
     .btn{border:1px solid var(--red);border-radius:5px;background:var(--red);color:#fff;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;font-weight:750;min-height:47px;padding:12px 17px;font-size:.92rem}
     .btn:hover{background:var(--red2);border-color:var(--red2);color:#fff}.btn.dark{background:var(--ink);border-color:var(--ink)}.btn.dark:hover{background:#444}.btn.secondary{background:#fff;color:var(--red2)}.btn.secondary:hover{background:#fff4f4}.btn.dark.secondary{color:var(--ink);background:white}
     .micro{color:#60636a;font-size:.78rem;margin-top:10px}
+    .safety-notice{background:#fff;border:2px solid var(--red);border-radius:10px;padding:22px 25px;margin:4px 0 28px;display:flex;align-items:flex-start;gap:15px}
+    .safety-symbol{background:var(--red);color:#fff;border-radius:50%;display:grid;place-items:center;flex:none;width:36px;height:36px;font-size:1.17rem;font-weight:800;line-height:1}
+    .safety-notice h2{font-size:1.11rem;letter-spacing:0;line-height:1.35;margin:0 0 6px;color:var(--red2)}
+    .safety-notice p{font-size:.95rem;color:var(--ink);line-height:1.62}
+    .exam-links{margin-top:auto;padding-top:13px}
+    .exam-links summary{cursor:pointer;font-size:.9rem;border:1px solid #c4c4c4;border-radius:5px;padding:12px 14px;background:#fff;color:var(--ink);font-weight:750}
+    .exam-links summary:hover,.exam-links summary:focus-visible{background:#f5f4f3}
+    .exam-links[open] summary{border-color:#444}
+    .exam-links .actions{padding-top:12px;margin-top:0}
+    .exam-links .micro{color:#702020;font-weight:650}
+    .class-confirm{display:flex;gap:11px;align-items:flex-start;cursor:pointer;margin:15px 0 0;padding:13px 14px;border:1px solid #d0d0d0;border-radius:6px;background:#f8f8f8;color:var(--ink);font-size:.87rem;line-height:1.45;font-weight:650}.class-confirm input{flex:none;width:18px;height:18px;margin:2px 0 0;accent-color:var(--red)}.exam-links .actions[hidden]{display:none}
+
     .note{margin-top:22px;border-left:4px solid var(--red);border-radius:4px;background:#fff;padding:19px 23px;color:#41444a}
     .steps{padding:57px 0 30px}.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.step{border:1px solid var(--rule);border-radius:8px;background:#fff;padding:25px 25px 26px}.num{font-weight:900;color:var(--red);font-size:.79rem;letter-spacing:.1em;margin-bottom:20px}.step p{font-size:.91rem;color:var(--muted)}
     .faq{padding:30px 0 65px}.faq-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}.faq-block{background:#eeece8;border-radius:8px;padding:25px 28px}.faq-block p{color:#46474b;font-size:.93rem}
     .foot{border-top:1px solid #dad9d7;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:24px 0 35px;font-size:.8rem;color:#686a6e}.foot a{color:inherit}
     @media(max-width:850px){.hero{grid-template-columns:1fr;padding:39px 0}.hero-mark{display:none}.steps-grid{grid-template-columns:1fr}.introline{align-items:start;flex-direction:column}}
-    @media(max-width:650px){.shell{padding:0 17px}.nav{min-height:86px}.logo{width:220px}.nav-side span{display:none}.nav-side strong{font-size:.73rem}.hero{padding:37px 0 30px}h1{font-size:2.65rem}.section-grid,.faq-grid{grid-template-columns:1fr}.panel{padding:24px;min-height:unset}.btn{width:100%}.actions{flex-direction:column}.steps{padding-top:35px}}
+    @media(max-width:650px){.safety-notice{padding:18px 16px;gap:12px}.safety-symbol{width:29px;height:29px}.shell{padding:0 17px}.nav{min-height:86px}.logo{width:220px}.nav-side span{display:none}.nav-side strong{font-size:.73rem}.hero{padding:37px 0 30px}h1{font-size:2.65rem}.section-grid,.faq-grid{grid-template-columns:1fr}.panel{padding:24px;min-height:unset}.btn{width:100%}.actions{flex-direction:column}.steps{padding-top:35px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -46,12 +58,18 @@
     <header class="hero"><div><p class="kicker">VIVES · Assessment support</p><h1>Ready for your English assessment?</h1>
     <p class="lead">Prepare your own device with <strong>Safe Exam Browser (SEB)</strong> for supervised English assessments in Toledo. First check your setup at home; then use the official assessment environment in class.</p></div>
     <aside class="hero-card" aria-label="Assessment preparation overview"><div class="hero-card-head">Assessment checklist</div><div class="hero-card-body"><ul><li>Install Safe Exam Browser before test day.</li><li>Use the practice environment first to test Toledo, audio and submission.</li><li>On the day itself, open the official exam environment and enter the Toledo access code provided in class.</li></ul></div></aside></header>
+    <aside class="safety-notice" role="note" aria-labelledby="safety-heading">
+      <span class="safety-symbol" aria-hidden="true">!</span>
+      <div><h2 id="safety-heading">Important — at home, use Practice SEB only</h2>
+      <p><strong>Never launch the Official Assessment configuration at home.</strong> It may lock your laptop or iPad in the assessment environment, and you may not be able to close SEB without help from your lecturer. For all preparation, select <strong>Practice &amp; device check</strong>. Downloading the file alone does not start SEB; opening it does. If you have opened Official SEB by mistake, contact your lecturer immediately.</p></div>
+    </aside>
     <div class="introline"><h2>Choose your environment</h2><p>Install SEB before selecting an option below.</p></div>
     <div class="section-grid" id="environments">
       <section class="panel practice" aria-labelledby="practice-title">
         <span class="pill">01 · Before test day</span><h3 id="practice-title">Practice &amp; device check</h3>
         <p>Use this configuration at home to check that SEB, the Toledo login, questions, video, headphones and submission work correctly.</p>
-        <p><strong>Practice exit password: <code>practice2026</code></strong>. You can use this to leave the practice SEB session after submitting your practice test.</p>
+        <p>When you reach the final page of the Toledo practice test, <strong>copy the exit password</strong>. Select <strong>Submit (Verzenden)</strong> and wait for confirmation. Only then close SEB using the password.</p>
+        <p><strong>Practice exit password: <code>practice2026</code></strong>. If pasting is unavailable on your device, type it manually.</p>
         <div class="actions">
           <a class="btn" href="VIVES_English_Testing_Practice.seb" download>Windows / macOS · download</a>
           <a class="btn secondary" href="sebs://lecturertom.github.io/VIVES-English-Testing-SEB/VIVES_English_Testing_Practice.seb">iPad · open in SEB</a>
@@ -61,23 +79,39 @@
         <span class="pill">02 · During your supervised assessment</span><h3 id="exam-title">Official assessment</h3>
         <p>Open this configuration only when your lecturer tells you to. Your device will remain in the secure assessment environment until the lecturer authorises you to leave.</p>
         <p>There is <strong>no extra password to launch SEB</strong>. Your lecturer gives you the Toledo assessment access code in class.</p>
-        <div class="actions">
-          <a class="btn dark" href="VIVES_English_Testing_Exam.seb" download>Windows / macOS · download</a>
-          <a class="btn dark secondary" href="sebs://lecturertom.github.io/VIVES-English-Testing-SEB/VIVES_English_Testing_Exam.seb">iPad · open in SEB</a>
-        </div><p class="small">Do not use the official configuration for practice. Its exit password is held by the invigilator.</p>
+        <p>The <strong>SEB exit password appears on the final page of your Toledo assessment</strong>. Copy it before submitting your answers. After submission is confirmed, select <strong>Quit / Exit</strong> and paste the password (or type it manually).</p>
+        <p class="small"><strong>Do not open this file at home.</strong> Launching the official configuration may leave you unable to exit without help from your lecturer.</p>
+        <details class="exam-links">
+          <summary>In class only — show official exam links</summary>
+          <p class="micro">Warning: launching Official SEB outside the supervised assessment may leave you unable to exit normally.</p>
+          <label class="class-confirm" for="confirm-in-class"><input id="confirm-in-class" type="checkbox"><span>I am in the supervised assessment room and my lecturer has instructed me to open Official SEB.</span></label>
+          <div class="actions" id="official-actions" hidden>
+            <a class="btn dark" href="VIVES_English_Testing_Exam.seb" download>Windows / macOS · download</a>
+            <a class="btn dark secondary" href="sebs://lecturertom.github.io/VIVES-English-Testing-SEB/VIVES_English_Testing_Exam.seb">iPad · open in SEB</a>
+          </div>
+        </details>
       </section>
     </div>
     <div class="note"><strong>Install SEB first:</strong> <a href="https://safeexambrowser.org/download_en.html" target="_blank" rel="noopener noreferrer">Windows &amp; macOS download</a> · <a href="https://apps.apple.com/be/app/safeexambrowser/id1155002964" target="_blank" rel="noopener noreferrer">iPadOS app</a>. On an iPad, open <strong>this page in Safari</strong> and then tap “iPad · open in SEB”.</div>
     <section class="steps" aria-labelledby="steps-title"><h2 id="steps-title">How it works</h2><div class="steps-grid">
       <article class="step"><div class="num">STEP 01</div><h3>Install &amp; practise</h3><p>Install SEB, open the practice configuration, sign in to Toledo and complete the practice assessment assigned by your lecturer.</p></article>
-      <article class="step"><div class="num">STEP 02</div><h3>Prepare for test day</h3><p>Bring a charged device, charger and headphones if needed. Connect and check audio before the assessment; close other applications.</p></article>
-      <article class="step"><div class="num">STEP 03</div><h3>Take &amp; submit</h3><p>Open the official configuration in class, enter the Toledo access code, complete the test and select <strong>Verzenden</strong>. Wait for submission confirmation.</p></article>
+      <article class="step"><div class="num">STEP 02</div><h3>Prepare for test day</h3><p>Bring a charged device, charger and headphones if needed. Connect and check audio before launching Official SEB; close other applications.</p></article>
+      <article class="step"><div class="num">STEP 03</div><h3>Submit &amp; exit</h3><p>On the final Toledo page, copy the SEB exit password. Select <strong>Verzenden</strong> and wait for confirmation. Only then select Quit / Exit in SEB and paste the password or type it manually.</p></article>
     </div></section>
     <section class="faq" aria-label="Frequently asked questions"><div class="faq-grid">
       <div class="faq-block"><h3>Can't open Toledo or play the video?</h3><p>Report problems before the assessment. During a supervised test, raise your hand and wait for the lecturer; do not try to switch apps or restart the session yourself.</p></div>
       <div class="faq-block"><h3>What if I use an iPad or an unsupported device?</h3><p>Test the full workflow in advance. iPad users should open this webpage in Safari, not inside SEB. If your device is not compatible, contact your lecturer early for an alternative.</p></div>
     </div></section>
-    <footer class="foot"><span>Hogeschool VIVES · English assessments · Unofficial course support page</span><span><a href="https://www.vives.be/nl/huisstijl/logo" target="_blank" rel="noopener noreferrer">VIVES identity</a> · <a href="https://safeexambrowser.org/" target="_blank" rel="noopener noreferrer">Safe Exam Browser</a></span></footer>
+    <footer class="foot"><span>VIVES · English assessments · Course support page</span><span><a href="https://www.vives.be/nl/huisstijl/logo" target="_blank" rel="noopener noreferrer">VIVES identity</a> · <a href="https://safeexambrowser.org/" target="_blank" rel="noopener noreferrer">Safe Exam Browser</a></span></footer>
   </main>
+  <script>
+    (() => {
+      const checkbox = document.getElementById('confirm-in-class');
+      const actions = document.getElementById('official-actions');
+      if (checkbox && actions) {
+        checkbox.addEventListener('change', () => { actions.hidden = !checkbox.checked; });
+      }
+    })();
+  </script>
 </body>
 </html>

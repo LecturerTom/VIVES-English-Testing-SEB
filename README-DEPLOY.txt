@@ -35,3 +35,16 @@ STUDENT MESSAGES
 - The accompanying Toledo information text and student email are provided separately in the response, not embedded in the public site ZIP.
 - Practice SEB password may be shared: practice2026.
 - NEVER include the official quit password or administrator password in this public website package.
+
+
+CLIPBOARD-ENABLED UPDATE (2026-10-11)
+Both Practice and Official Exam .seb files are updated:
+- Windows clipboardPolicy: Allow (0)
+- macOS enablePrivateClipboard: false
+- macOS enablePrivateClipboardMacEnforce: false
+Existing administrator and quit password hashes are unchanged.
+Security tradeoff: copied text may leave the exam browser via the OS clipboard on Windows/macOS.
+The iPadOS clipboard may remain private, and pasting into the Quit Password dialog is not guaranteed.
+Always test the copy -> submit -> quit password paste sequence on the target OS.
+If a user already started SEB using the previous file, they must fully quit and start using the updated configuration to test these changes.
+Upload these files (not the ZIP itself) to the root of the repository, replacing old versions.
